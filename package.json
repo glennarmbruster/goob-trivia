@@ -1,0 +1,26 @@
+{
+  "name": "goobs-trivia-finder",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0",
+    "build": "tsc && vite build",
+    "preview": "vite preview --host 0.0.0.0",
+    "build:sample-db": "python3 tools/build_database.py --input sample-data/trivia.jsonl --output public/sample-trivia-database.sqlite --manifest public/sample-trivia-database.json --version deep-disney-music-starter-v2",
+    "verify:sample-db": "python3 tools/verify_database.py --database public/sample-trivia-database.sqlite --manifest public/sample-trivia-database.json",
+    "prepare:disney": "python3 tools/prepare_disney_wikidata.py",
+    "prepare:disney-music": "PYTHONPATH=data/tools/python python3 tools/enrich_disney_music.py",
+    "prepare:production": "PYTHONPATH=data/tools/python python3 tools/prepare_triviaqa.py",
+    "build:production-db": "python3 tools/build_database.py --input data/normalized/goobs-trivia-v4.jsonl --output data/generated/goobs-trivia-finder-v4.sqlite --manifest data/generated/goobs-trivia-finder-v4.json --version goobs-trivia-v4",
+    "verify:production": "python3 tools/verify_database.py --database data/generated/goobs-trivia-finder-v4.sqlite --manifest data/generated/goobs-trivia-finder-v4.json"
+  },
+  "dependencies": {
+    "@sqlite.org/sqlite-wasm": "^3.50.4-build1"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.2",
+    "vite": "^7.1.7",
+    "vite-plugin-pwa": "^1.1.0"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "format": "goobs-trivia-finder-database",
+  "schemaVersion": 2,
+  "databaseVersion": "deep-disney-music-starter-v2",
+  "facts": 101,
+  "disneyFacts": 86,
+  "disneySongs": 20,
+  "categories": 9,
+  "bytes": 212992,
+  "sha256": "9b7af9896d861c2e5e9f82996a4ebc0217c2fd98a756c8cbc420fa2dc469e310",
+  "file": "sample-trivia-database.sqlite"
+}
